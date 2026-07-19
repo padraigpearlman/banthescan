@@ -1,0 +1,346 @@
+---
+layout: default
+nav: city
+title: "New York City Campaign | Ban the Scan"
+description: "NYC Council bills would ban biometric surveillance in public accommodations, residential buildings, and by city government. See the bills and sign the petition."
+
+hero:
+  eyebrow: "New York City Campaign"
+  heading: "Three bills. One city ban."
+  sub: >-
+    Three bills at the New York City Council would ban biometric
+    surveillance in public accommodations, residential buildings, and by
+    city government itself. Here's what each bill does, and how to tell
+    your Council Member to pass them.
+
+bills_section:
+  label: "The Legislation"
+  heading: "What these three bills actually do."
+  intro: >-
+    Two of the three bills have already been introduced at the City
+    Council. The third, a ban on city government's own use of biometric
+    surveillance, is still being drafted, which is exactly why it needs
+    public pressure now.
+
+map:
+  label: "Track the Scan"
+  heading: "See where biometric surveillance shows up in NYC."
+  intro: >-
+    This crowdsourced map, maintained by S.T.O.P. (Surveillance
+    Technology Oversight Project), tracks stores, arenas, and other
+    public accommodations that use facial recognition, exactly the kind
+    of use Int 0213-2026 would ban.
+
+petition:
+  label: "Take Action"
+  heading: "Sign the New York City petition."
+  intro: >-
+    Add your name to tell the City Council to pass all three bills, and
+    to push for a sponsor on the government-use ban.
+
+documents:
+  label: "Campaign Documents"
+  heading: "Everything your organization needs to help."
+  intro: "Sign-on letters and memos of support for the City Council package."
+  doc_link_1_label: "City Council Sign-On Letter (PDF)"
+  doc_link_2_label: "Memo of Support (PDF)"
+  callout_text: "Represent an organization? Sign on to our NYC coalition letter."
+  callout_cta_label: "Sign On Your Organization"
+
+contact:
+  label: "Get Involved"
+  heading: "Contact your City Council Member."
+  intro: >-
+    Signing the petition matters, but a direct call or email to your own
+    Council Member carries the most weight at City Hall, especially on
+    the bill that still needs a sponsor. Here's how in three steps.
+  steps:
+    - num: "01"
+      title: "Find Your Council Member"
+      text: >-
+        Look up which Council Member represents your district. That's
+        who you'll be calling or emailing.
+      links:
+        - label: "Find My Council Member"
+          url: "https://council.nyc.gov/districts/"
+          external: true
+    - num: "02"
+      title: "Call or Email"
+      text: >-
+        A short, personal call takes two minutes and is one of the most
+        effective things you can do. Use this script, or send the email
+        template:
+      quote: >-
+        &ldquo;Hi, my name is ___ and I'm a constituent from
+        [neighborhood/zip]. I'm calling to ask Council Member [name] to
+        co-sponsor and vote yes on Int 0213-2026 and Int 0428-2026, and
+        to introduce a bill banning city government's own use of
+        biometric surveillance.&rdquo;
+      links:
+        - label: "Get the Email Template"
+          url: "#"
+          external: false
+    - num: "03"
+      title: "Show Up"
+      text: >-
+        Attend a City Council hearing or coalition day of action. We'll
+        email you the dates as soon as they're announced.
+      links:
+        - label: "Join Our Action Alerts"
+          url: "#action"
+          external: false
+  speaker_callout_text: >-
+    The government-use ban still needs a sponsor and a committee
+    hearing. Add direct pressure on the City Council Speaker to move it
+    forward.
+  speaker_cta_label: "Contact the Speaker"
+  map_callout_text: >-
+    Help us track where biometric surveillance shows up in NYC stores,
+    arenas, and other public accommodations. Add a sighting from your
+    own neighborhood.
+  map_cta_label: "Contribute to the Biometric Map"
+  map_secondary_label: "Read the How-To Guide"
+
+bridge:
+  label: "Fighting On Two Fronts"
+  heading: "There's a State Campaign too."
+  intro: >-
+    Four bills in the State Legislature would extend similar bans
+    across all of New York. See the details and sign that petition too.
+  cta_label: "View the State Campaign"
+
+final_cta:
+  label: "Stay Involved"
+  heading: "Don't miss a hearing date."
+  intro: >-
+    Get email updates as these bills move through the City Council:
+    hearing dates, votes, and moments when your call matters most.
+  cta_label: "Why This Matters"
+---
+<main id="main">
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+        <div class="wrap">
+            <span class="hero-eyebrow">{{ page.hero.eyebrow }}</span>
+            <h1>{{ page.hero.heading }}</h1>
+            <p class="hero-sub">{{ page.hero.sub }}</p>
+        </div>
+    </section>
+
+    <div class="tape-divider" aria-hidden="true"></div>
+
+    <!-- BILLS -->
+    <section class="bills" id="bills">
+        <div class="wrap">
+            <p class="section-label">{{ page.bills_section.label }}</p>
+            <h2 class="section-heading">{{ page.bills_section.heading }}</h2>
+            <p class="section-intro">{{ page.bills_section.intro }}</p>
+
+            <div class="bills-list">
+                {% assign city_bills = site.bills | where: "scope", "city" | sort: "order" %}
+                {% for bill in city_bills %}
+                <article class="bill-card">
+                    <div class="bill-card-head">
+                        <span class="bill-number">{{ bill.bill_number }}</span>
+                        <span class="status status-{{ bill.status_class }}"
+                            >{{ bill.status }}</span
+                        >
+                    </div>
+                    <h3>{{ bill.title }}</h3>
+                    <p class="bill-sponsors">{{ bill.sponsors }}</p>
+                    <p class="bill-desc">{{ bill.desc }}</p>
+                    <div class="bill-links">
+                        {% for link in bill.links %}
+                        <a class="bill-link" href="{{ link.url }}">{{ link.label }} &rarr;</a>
+                        {% endfor %}
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- BIOMETRIC MAP -->
+    <section class="precedent" id="map">
+        <div class="wrap">
+            <p class="section-label">{{ page.map.label }}</p>
+            <h2 class="section-heading">{{ page.map.heading }}</h2>
+            <p class="section-intro">{{ page.map.intro }}</p>
+
+            <div class="petition-embed">
+                <iframe
+                    src="https://datawrapper.dwcdn.net/yf3CS/4/"
+                    width="100%"
+                    height="677"
+                    frameborder="0"
+                    scrolling="no"
+                    title="Biometric Surveillance Map of New York City"
+                ></iframe>
+                <script type="text/javascript">
+                    !(function () {
+                        "use strict";
+                        window.addEventListener("message", function (a) {
+                            if (void 0 !== a.data["datawrapper-height"]) {
+                                var e = document.querySelectorAll("iframe");
+                                for (var t in a.data["datawrapper-height"])
+                                    for (var r = 0; r < e.length; r++)
+                                        if (e[r].contentWindow === a.source) {
+                                            var i = a.data["datawrapper-height"][t] + "px";
+                                            e[r].style.height = i;
+                                        }
+                            }
+                        });
+                    })();
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <!-- PETITION -->
+    <section class="petition" id="petition">
+        <div class="wrap">
+            <p class="section-label">{{ page.petition.label }}</p>
+            <h2 class="section-heading">{{ page.petition.heading }}</h2>
+            <p class="section-intro">{{ page.petition.intro }}</p>
+
+            <div class="petition-embed">
+                <!--
+                  NOTE: this Action Network petition's letter text currently
+                  cites Intro 0217-2024 and Intro 0425-2024. Confirm these
+                  have been updated to the current session's numbers
+                  (Int 0213-2026 and Int 0428-2026) before publishing.
+                -->
+                <link
+                    href="https://actionnetwork.org/css/style-embed-v3.css"
+                    rel="stylesheet"
+                    type="text/css"
+                />
+                <script
+                    src="https://actionnetwork.org/widgets/v6/petition/ban-the-scan-nyc?format=js&source=widget"
+                ></script>
+                <div
+                    id="can-petition-area-ban-the-scan-nyc"
+                    style="width: 100%"
+                ></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CAMPAIGN DOCUMENTS -->
+    <section class="campaign-docs" id="documents">
+        <div class="wrap">
+            <p class="section-label">{{ page.documents.label }}</p>
+            <h2 class="section-heading">{{ page.documents.heading }}</h2>
+            <p class="section-intro">{{ page.documents.intro }}</p>
+
+            <div class="doc-links">
+                <a class="btn btn-sm" href="#"
+                    >{{ page.documents.doc_link_1_label }}</a
+                >
+                <a class="btn btn-sm" href="#"
+                    >{{ page.documents.doc_link_2_label }}</a
+                >
+            </div>
+
+            <div class="org-callout">
+                <p>{{ page.documents.callout_text }}</p>
+                <a class="btn btn-black" href="mailto:info@banthescan.org"
+                    >{{ page.documents.callout_cta_label }}</a
+                >
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT YOUR LEGISLATORS -->
+    <section class="contact-legislators" id="contact">
+        <div class="wrap">
+            <p class="section-label">{{ page.contact.label }}</p>
+            <h2 class="section-heading">{{ page.contact.heading }}</h2>
+            <p class="section-intro">{{ page.contact.intro }}</p>
+
+            <div class="contact-grid">
+                {% for step in page.contact.steps %}
+                <div class="contact-step">
+                    <div class="step-num">{{ step.num }}</div>
+                    <h3>{{ step.title }}</h3>
+                    <p>{{ step.text }}</p>
+                    {% if step.quote %}
+                    <blockquote>{{ step.quote }}</blockquote>
+                    {% endif %}
+                    <div class="contact-step-links">
+                        {% for link in step.links %}
+                        {% if link.external %}
+                        <a class="btn btn-sm" href="{{ link.url }}" target="_blank" rel="noopener"
+                            >{{ link.label }}</a
+                        >
+                        {% else %}
+                        <a class="btn btn-sm" href="{{ link.url }}"
+                            >{{ link.label }}</a
+                        >
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="org-callout">
+                <p>{{ page.contact.speaker_callout_text }}</p>
+                <a class="btn btn-black" href="#"
+                    >{{ page.contact.speaker_cta_label }}</a
+                >
+            </div>
+
+            <div class="org-callout">
+                <p>{{ page.contact.map_callout_text }}</p>
+                <div class="callout-links">
+                    <a
+                        class="btn btn-black"
+                        href="https://docs.google.com/forms/d/1izYEzEJfui7Hz02NZV7mjOXBbUCtNqd8Wdi5CNVPNX4/viewform"
+                        target="_blank"
+                        rel="noopener"
+                        >{{ page.contact.map_cta_label }}</a
+                    >
+                    <a
+                        class="btn btn-sm"
+                        href="https://www.stopspying.org/biometric-map"
+                        target="_blank"
+                        rel="noopener"
+                        >{{ page.contact.map_secondary_label }}</a
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BRIDGE TO STATE CAMPAIGN -->
+    <section class="bridge-cta" id="bridge">
+        <div class="wrap">
+            <p class="section-label">{{ page.bridge.label }}</p>
+            <h2 class="section-heading">{{ page.bridge.heading }}</h2>
+            <p class="section-intro">{{ page.bridge.intro }}</p>
+            <div class="bridge-actions">
+                <a class="btn btn-yellow" href="{{ '/campaign-state.html' | relative_url }}"
+                    >{{ page.bridge.cta_label }}</a
+                >
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta" id="action">
+        <div class="wrap">
+            <p class="section-label">{{ page.final_cta.label }}</p>
+            <h2 class="section-heading">{{ page.final_cta.heading }}</h2>
+            <p class="section-intro">{{ page.final_cta.intro }}</p>
+
+            <div class="cta-actions">
+                <a class="btn btn-primary" href="{{ '/about.html' | relative_url }}"
+                    >{{ page.final_cta.cta_label }}</a
+                >
+            </div>
+
+            {% include signup-form.html %}
+        </div>
+    </section>
+</main>

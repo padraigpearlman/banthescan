@@ -1,0 +1,66 @@
+<header class="site-header" id="siteHeader">
+    <div class="wrap">
+        <a class="logo" href="{{ '/index.html' | relative_url }}"
+            ><span class="dot"></span> Ban the Scan</a
+        >
+
+        <nav class="main-nav" aria-label="Primary">
+            <ul>
+                <li>
+                    <a
+                        href="{{ '/index.html' | relative_url }}"
+                        {% if page.nav == 'home' %}aria-current="page"{% endif %}
+                        >Home</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="{{ '/about.html' | relative_url }}"
+                        {% if page.nav == 'about' %}aria-current="page"{% endif %}
+                        >Why Ban?</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="{{ '/campaign-state.html' | relative_url }}"
+                        {% if page.nav == 'state' %}aria-current="page"{% endif %}
+                        >State Campaign</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="{{ '/campaign-city.html' | relative_url }}"
+                        {% if page.nav == 'city' %}aria-current="page"{% endif %}
+                        >City Campaign</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="{{ '/news.html' | relative_url }}"
+                        {% if page.nav == 'media' %}aria-current="page"{% endif %}
+                        >Media</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="{{ '/coalition.html' | relative_url }}"
+                        {% if page.nav == 'coalition' %}aria-current="page"{% endif %}
+                        >Coalition</a
+                    >
+                </li>
+            </ul>
+            <a class="btn nav-cta" href="{{ '/get-involved.html' | relative_url }}"
+                >Take Action</a
+            >
+        </nav>
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-expanded="false"
+            aria-controls="siteHeader"
+        >
+            Menu
+        </button>
+    </div>
+</header>

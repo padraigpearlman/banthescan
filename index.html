@@ -1,0 +1,281 @@
+---
+layout: default
+nav: home
+title: "Ban the Scan | Stop Facial Recognition Surveillance in NYC &amp; New York State"
+description: "Ban the Scan is a coalition campaign to ban discriminatory facial recognition and biometric surveillance in New York City and New York State."
+
+hero:
+  eyebrow: "NYC &amp; New York State Coalition"
+  heading: "Your face <mark>is not</mark> a serial number."
+  sub: >-
+    Facial recognition and biometric surveillance technologies are unjust,
+    discriminatory, and a threat to our privacy. Help us stop their spread
+    in New York City and the state of New York.
+  cta_primary_label: "Sign the Petition"
+  cta_primary_url: "/get-involved.html"
+  cta_secondary_label: "Why We're Fighting This"
+  cta_secondary_url: "/about.html"
+  stat_1_label: "NYPD facial recognition searches, 2016&ndash;2019"
+  stat_2_label: "Bills moving in NYC &amp; NY State right now"
+  stat_3_label: "Coalition organizations backing the campaign"
+
+why_ban:
+  label: "The Problem"
+  heading: "Surveillance wasn't built to be fair."
+  intro: >-
+    Facial recognition and biometric surveillance disproportionately
+    targets BIPOC, Muslim, immigrant, and LGBTQ+ New Yorkers, and has
+    already put innocent people in handcuffs.
+  reasons:
+    - num: "01"
+      title: "Wrongful Arrests"
+      text: >-
+        Faulty matches have led to real people being wrongfully arrested
+        and jailed, disproportionately Black New Yorkers.
+    - num: "02"
+      title: "Corporate Overreach"
+      text: >-
+        Madison Square Garden has used facial recognition to block
+        attorneys at the door. Retailers like Wegmans and Rite Aid have
+        tracked shoppers without consent.
+    - num: "03"
+      title: "It's Banned Elsewhere"
+      text: >-
+        Boston, San Francisco, Portland, and Minneapolis have already
+        passed bans. New York should be next.
+  footer_cta_label: "Read the Full Case Against Biometric Surveillance"
+
+campaigns:
+  label: "Two Fronts, One Fight"
+  heading: "Pick your campaign."
+  intro: >-
+    We're pushing bans at both the city and state level. Every signature
+    and every call helps move these bills forward.
+  state:
+    flag: "New York State"
+    title: "Statewide Biometric Surveillance Ban"
+    desc: >-
+      Four bills would ban law enforcement, landlord, public
+      accommodation, and school use of facial recognition across New
+      York State.
+    bill_count_label: "active bills"
+    cta_label: "View State Campaign &amp; Sign the Petition"
+  city:
+    flag: "New York City"
+    title: "NYC Biometric Surveillance Ban"
+    desc: >-
+      Council bills would ban biometric surveillance in public
+      accommodations, residential buildings, and by city government.
+    bill_count_label: "bills introduced"
+    cta_label: "View City Campaign &amp; Sign the Petition"
+
+coalition:
+  label: "Who's Behind This"
+  heading_prefix: "A coalition"
+  heading_suffix: "organizations strong."
+  intro: >-
+    Led by a steering committee of civil rights and civil liberties
+    organizations, and joined by dozens of community groups across New
+    York.
+  cta_label: "See the Full Coalition"
+
+news:
+  label: "In the Press"
+  heading: "Reporters have been paying attention."
+  cta_label: "See All Media Coverage"
+
+final_cta:
+  label: "Take Action"
+  heading: "Your legislators need to hear from you."
+  intro: >-
+    Sign the petition, contact your representatives, and stay in the loop
+    as these bills move through the City Council and State Legislature.
+  cta_primary_label: "Sign the Petition"
+  cta_primary_url: "/get-involved.html"
+  cta_secondary_label: "Contact Your Legislators"
+  cta_secondary_url: "/contact-legislators.html"
+---
+<main id="main">
+    <!-- HERO -->
+    <section class="hero">
+        <div class="tape tape-1" aria-hidden="true"></div>
+        <div class="tape tape-2" aria-hidden="true"></div>
+        <div class="tape tape-3" aria-hidden="true"></div>
+        <div class="wrap">
+            <div class="hero-copy">
+                <span class="hero-eyebrow">{{ page.hero.eyebrow }}</span>
+                <h1>{{ page.hero.heading }}</h1>
+                <p class="hero-sub">{{ page.hero.sub }}</p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="{{ page.hero.cta_primary_url | relative_url }}"
+                        >{{ page.hero.cta_primary_label }}</a
+                    >
+                    <a class="btn btn-yellow" href="{{ page.hero.cta_secondary_url | relative_url }}"
+                        >{{ page.hero.cta_secondary_label }}</a
+                    >
+                </div>
+            </div>
+
+            <div class="hero-card">
+                <div class="stat">22,000+</div>
+                <div class="stat-label">{{ page.hero.stat_1_label }}</div>
+
+                <div class="stat">{{ site.bills | size }}</div>
+                <div class="stat-label">{{ page.hero.stat_2_label }}</div>
+
+                <div class="stat">{{ site.coalition_orgs | where_exp: "o", "o.tags contains 'member'" | size }}</div>
+                <div class="stat-label">{{ page.hero.stat_3_label }}</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY BAN -->
+    <section class="why-ban" id="why">
+        <div class="wrap">
+            <p class="section-label">{{ page.why_ban.label }}</p>
+            <h2 class="section-heading">{{ page.why_ban.heading }}</h2>
+            <p class="section-intro">{{ page.why_ban.intro }}</p>
+
+            <div class="reasons-grid">
+                {% for reason in page.why_ban.reasons %}
+                <div class="reason-card">
+                    <div class="num">{{ reason.num }}</div>
+                    <h3>{{ reason.title }}</h3>
+                    <p>{{ reason.text }}</p>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="why-ban-footer">
+                <a class="btn btn-black" href="{{ '/about.html' | relative_url }}"
+                    >{{ page.why_ban.footer_cta_label }}</a
+                >
+            </div>
+        </div>
+    </section>
+
+    <!-- CAMPAIGNS -->
+    <section class="campaigns" id="campaigns">
+        <div class="wrap">
+            <p class="section-label">{{ page.campaigns.label }}</p>
+            <h2 class="section-heading">{{ page.campaigns.heading }}</h2>
+            <p class="section-intro">{{ page.campaigns.intro }}</p>
+
+            <div class="campaign-grid">
+                <article class="campaign-card">
+                    <span class="flag">{{ page.campaigns.state.flag }}</span>
+                    <h3>{{ page.campaigns.state.title }}</h3>
+                    <p>{{ page.campaigns.state.desc }}</p>
+                    <p class="bill-count">
+                        <span>{{ site.bills | where: "scope", "state" | size }}</span> {{ page.campaigns.state.bill_count_label }}
+                    </p>
+                    <ul class="bill-list">
+                        {% assign state_bills = site.bills | where: "scope", "state" | sort: "order" %}
+                        {% for bill in state_bills %}
+                        <li>{{ bill.bill_number }}</li>
+                        {% endfor %}
+                    </ul>
+                    <a
+                        class="btn btn-primary"
+                        href="{{ '/campaign-state.html' | relative_url }}"
+                        >{{ page.campaigns.state.cta_label }}</a
+                    >
+                </article>
+
+                <article class="campaign-card">
+                    <span class="flag">{{ page.campaigns.city.flag }}</span>
+                    <h3>{{ page.campaigns.city.title }}</h3>
+                    <p>{{ page.campaigns.city.desc }}</p>
+                    <p class="bill-count">
+                        <span>{{ site.bills | where: "scope", "city" | where_exp: "b", "b.bill_number != 'Not Yet Numbered'" | size }}</span> {{ page.campaigns.city.bill_count_label }}
+                    </p>
+                    <ul class="bill-list">
+                        {% assign city_bills = site.bills | where: "scope", "city" | sort: "order" %}
+                        {% for bill in city_bills %}
+                        {% unless bill.bill_number == "Not Yet Numbered" %}
+                        <li>{{ bill.bill_number }}</li>
+                        {% endunless %}
+                        {% endfor %}
+                    </ul>
+                    <a class="btn btn-primary" href="{{ '/campaign-city.html' | relative_url }}"
+                        >{{ page.campaigns.city.cta_label }}</a
+                    >
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- COALITION -->
+    <section class="coalition" id="coalition">
+        <div class="wrap">
+            <p class="section-label">{{ page.coalition.label }}</p>
+            <h2 class="section-heading">
+                {{ page.coalition.heading_prefix }} {{ site.coalition_orgs | where_exp: "o", "o.tags contains 'member'" | size }}<br class="lg-break" />
+                {{ page.coalition.heading_suffix }}
+            </h2>
+            <p class="section-intro">{{ page.coalition.intro }}</p>
+
+            {% assign steering_orgs = site.coalition_orgs | where_exp: "o", "o.tags contains 'steering'" | sort: "steering_order" %}
+            <div class="org-strip">
+                {% for org in steering_orgs %}
+                <span>{{ org.name }}</span>
+                {% endfor %}
+                <span class="row-break-lg" aria-hidden="true"></span>
+                {% assign member_count = site.coalition_orgs | where_exp: "o", "o.tags contains 'member'" | size %}
+                {% assign more_count = member_count | minus: steering_orgs.size %}
+                <span class="more">+ {{ more_count }} more</span>
+            </div>
+
+            <a class="btn btn-black" href="{{ '/coalition.html' | relative_url }}"
+                >{{ page.coalition.cta_label }}</a
+            >
+        </div>
+    </section>
+
+    <!-- NEWS PREVIEW -->
+    <section class="news" id="media">
+        <div class="wrap">
+            <p class="section-label">{{ page.news.label }}</p>
+            <h2 class="section-heading">{{ page.news.heading }}</h2>
+
+            <div class="news-grid">
+                {% assign recent_news = site.news | sort: "date" | reverse | slice: 0, 3 %}
+                {% for item in recent_news %}
+                <article class="news-card">
+                    <div class="outlet">{{ item.outlet }}</div>
+                    <h3>{{ item.headline }}</h3>
+                    <div class="news-card-foot">
+                        <div class="date">{{ item.display_date }}</div>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+
+            <a class="btn btn-black" href="{{ '/news.html' | relative_url }}"
+                >{{ page.news.cta_label }}</a
+            >
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta" id="action">
+        <div class="wrap">
+            <p class="section-label">{{ page.final_cta.label }}</p>
+            <h2 class="section-heading">{{ page.final_cta.heading }}</h2>
+            <p class="section-intro">{{ page.final_cta.intro }}</p>
+
+            <div class="cta-actions">
+                <a class="btn btn-black" href="{{ page.final_cta.cta_primary_url | relative_url }}"
+                    >{{ page.final_cta.cta_primary_label }}</a
+                >
+                <a
+                    class="btn btn-primary"
+                    href="{{ page.final_cta.cta_secondary_url | relative_url }}"
+                    >{{ page.final_cta.cta_secondary_label }}</a
+                >
+            </div>
+
+            {% include signup-form.html %}
+        </div>
+    </section>
+</main>

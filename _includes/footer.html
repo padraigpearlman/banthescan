@@ -1,0 +1,65 @@
+{% assign on_campaign_page = false %}
+{% if page.nav == 'state' or page.nav == 'city' %}
+    {% assign on_campaign_page = true %}
+{% endif %}
+
+<footer class="site-footer">
+    <div class="wrap">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">Ban the Scan</div>
+                <p>{{ site.footer_tagline }}</p>
+            </div>
+            <div class="footer-col">
+                <h4>Campaign</h4>
+                <ul>
+                    <li><a href="{{ '/about.html' | relative_url }}">Why Ban?</a></li>
+                    <li>
+                        <a href="{{ '/campaign-state.html' | relative_url }}">State Campaign</a>
+                    </li>
+                    <li>
+                        <a href="{{ '/campaign-city.html' | relative_url }}">City Campaign</a>
+                    </li>
+                    <li>
+                        <a href="{{ '/coalition.html' | relative_url }}">Coalition Members</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Get Involved</h4>
+                <ul>
+                    <li>
+                        {% if on_campaign_page %}
+                        <a href="#petition">Sign the Petition</a>
+                        {% else %}
+                        <a href="{{ '/get-involved.html' | relative_url }}">Sign the Petition</a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if on_campaign_page %}
+                        <a href="#contact">Contact Legislators</a>
+                        {% else %}
+                        <a href="{{ '/contact-legislators.html' | relative_url }}">Contact Legislators</a>
+                        {% endif %}
+                    </li>
+                    <li><a href="{{ '/news.html' | relative_url }}">Media Coverage</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li>
+                        <a href="mailto:{{ site.footer_contact_email }}"
+                            >{{ site.footer_contact_email }}</a
+                        >
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>{{ site.footer_copyright }}</span>
+            <span>Site built with care in New York.</span>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{{ page.title }}</title>
+        <meta name="description" content="{{ page.description }}" />
+        <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}" />
+    </head>
+    <body>
+        <a class="skip-link" href="#main">Skip to Content</a>
+
+        {% include announcement.html %}
+        {% include header.html %}
+
+        {{ content }}
+
+        {% include footer.html %}
+
+        <script>
+            var toggle = document.getElementById("menuToggle");
+            var header = document.getElementById("siteHeader");
+            toggle.addEventListener("click", function () {
+                var isOpen = header.classList.toggle("nav-open");
+                toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+                toggle.textContent = isOpen ? "Close" : "Menu";
+            });
+        </script>
+    </body>
+</html>
