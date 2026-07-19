@@ -96,7 +96,7 @@ final_cta:
             <div class="coverage-category" id="corporate-surveillance">
                 <h3>{{ page.coverage.corporate_heading }}</h3>
                 <div class="news-grid">
-                    {% assign corporate_news = site.news | where: "category", "corporate-surveillance" | sort: "date" | reverse %}
+                    {% assign corporate_news = site.news | where_exp: "n", "n.categories contains 'corporate-surveillance'" | sort: "date" | reverse %}
                     {% for item in corporate_news %}
                     <article class="news-card">
                         <div class="outlet">{{ item.outlet }}</div>
@@ -113,7 +113,7 @@ final_cta:
             <div class="coverage-category" id="policy-legislation">
                 <h3>{{ page.coverage.policy_heading }}</h3>
                 <div class="news-grid">
-                    {% assign policy_news = site.news | where: "category", "policy-legislation" | sort: "date" | reverse %}
+                    {% assign policy_news = site.news | where_exp: "n", "n.categories contains 'policy-legislation'" | sort: "date" | reverse %}
                     {% for item in policy_news %}
                     <article class="news-card">
                         <div class="outlet">{{ item.outlet }}</div>
@@ -130,7 +130,7 @@ final_cta:
             <div class="coverage-category" id="research-data">
                 <h3>{{ page.coverage.research_heading }}</h3>
                 <div class="news-grid">
-                    {% assign research_news = site.news | where: "category", "research-data" | sort: "date" | reverse %}
+                    {% assign research_news = site.news | where_exp: "n", "n.categories contains 'research-data'" | sort: "date" | reverse %}
                     {% for item in research_news %}
                     <article class="news-card">
                         <div class="outlet">{{ item.outlet }}</div>
