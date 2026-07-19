@@ -1,68 +1,64 @@
+---
 title: Ban the Scan
-description: >-
-  Ban the Scan is a coalition campaign to ban discriminatory facial
-  recognition and biometric surveillance in New York City and New York State.
-url: "https://banthescan.org"
-
-# Sitewide chrome content (announcement bar, footer). Edit these in Siteleaf
-# without touching any template files.
-announcement_text: "Take action now:"
-announcement_link_text: "tell your legislators to ban biometric surveillance"
-announcement_link_url: "get-involved.html"
-
-footer_tagline: >-
-  A coalition campaign to ban discriminatory facial recognition and
-  biometric surveillance in New York City and New York State.
-footer_contact_email: "info@banthescan.org"
-footer_copyright: "&copy; 2026 Ban the Scan Coalition. All rights reserved."
-
-# The email signup form is identical on every page, so its copy lives here
-# once instead of being duplicated as front matter on 8 separate pages.
-signup_heading: "Get Campaign Updates"
-signup_intro: >-
-  Action alerts, hearing dates, and coalition news. We will never share or
-  sell your data.
-signup_email_placeholder: "you@example.com"
-signup_button_label: "Sign Up"
-signup_fineprint: >-
-  By signing up, you agree to receive emails from Ban the Scan. Unsubscribe
-  anytime.
-
+timezone: UTC
 collections:
   bills:
-    output: false
-  news:
+    title: Bills
     output: false
   coalition_orgs:
+    title: Coalition Orgs
     output: false
-
+  news:
+    title: News
+    output: false
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
 defaults:
-  - scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "default"
-  - scope:
-      path: ""
-      type: "bills"
-    values:
-      layout: "none"
-  - scope:
-      path: ""
-      type: "news"
-    values:
-      layout: "none"
-  - scope:
-      path: ""
-      type: "coalition_orgs"
-    values:
-      layout: "none"
-
+- scope:
+    path: ''
+    type: pages
+  values:
+    layout: default
+- scope:
+    path: ''
+    type: bills
+  values:
+    layout: none
+- scope:
+    path: ''
+    type: news
+  values:
+    layout: none
+- scope:
+    path: ''
+    type: coalition_orgs
+  values:
+    layout: none
+description: Ban the Scan is a coalition campaign to ban discriminatory facial recognition
+  and biometric surveillance in New York City and New York State.
+url: https://banthescan.org
+announcement_text: 'Take action now:'
+announcement_link_text: tell your legislators to ban biometric surveillance
+announcement_link_url: get-involved.html
+footer_tagline: A coalition campaign to ban discriminatory facial recognition and
+  biometric surveillance in New York City and New York State.
+footer_contact_email: info@banthescan.org
+footer_copyright: "&copy; 2026 Ban the Scan Coalition. All rights reserved."
+signup_heading: Get Campaign Updates
+signup_intro: Action alerts, hearing dates, and coalition news. We will never share
+  or sell your data.
+signup_email_placeholder: you@example.com
+signup_button_label: Sign Up
+signup_fineprint: By signing up, you agree to receive emails from Ban the Scan. Unsubscribe
+  anytime.
 plugins:
-  - jekyll-sitemap
-
+- jekyll-sitemap
 exclude:
-  - Gemfile
-  - Gemfile.lock
-  - README.md
-  - vendor
+- Gemfile
+- Gemfile.lock
+- README.md
+- vendor

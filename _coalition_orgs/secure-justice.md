@@ -1,5 +1,8 @@
 ---
-name: "Secure Justice"
-tags: [member]
+title: Secure Justice
+tags:
+- member
+name: Secure Justice
 member_order: 25
 ---
+

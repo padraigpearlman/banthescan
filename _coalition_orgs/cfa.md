@@ -1,5 +1,8 @@
 ---
-name: "CFA &ndash; Consumer Federation of America"
-tags: [member]
+title: Cfa
+tags:
+- member
+name: CFA &ndash; Consumer Federation of America
 member_order: 5
 ---
+
