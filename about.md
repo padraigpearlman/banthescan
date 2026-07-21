@@ -116,16 +116,16 @@ real_stories:
   - name: Michael Oliver
     link_url: https://www.vice.com/en/article/bv8k8a/faulty-facial-recognition-led-to-his-arrestnow-hes-suing
     link_label: Faulty Facial Recognition Led to His Arrest, Now He's Suing.
-    sources: <em>VICE</em>
+    sources: "<em>VICE</em>"
   - name: Randall Reid
     link_url: https://www.nytimes.com/2023/03/31/technology/facial-recognition-false-arrests.html
     link_label: "&ldquo;Thousands of Dollars for Something I Didn't Do.&rdquo;"
-    sources: <em>The New York Times</em>, Gizmodo, AP News
+    sources: "<em>The New York Times</em>, Gizmodo, AP News"
   - name: Trevis Williams
     link_url: https://www.nytimes.com/2025/08/26/nyregion/nypd-facial-recognition-dismissed-case.html
     link_label: How the N.Y.P.D.'s Facial Recognition Tool Landed the Wrong Man in
       Jail.
-    sources: '<em>The New York Times</em>, '
+    sources: "<em>The New York Times</em>, "
     link2_url: https://abc7ny.com/post/man-falsely-jailed-nypds-facial-recognition-surveillance-tech-failed/17664671/
     link2_label: ABC News
   - name: LaDonna Crutchfeld
@@ -135,8 +135,9 @@ real_stories:
       2 Detroit</em>
   - name: Christopher Gatlin
     link_url: https://www.washingtonpost.com/business/interactive/2025/police-artificial-intelligence-facial-recognition/
-    link_label: 'Arrested by AI: Police Ignore Standards After Facial Recognition Matches.'
-    sources: <em>The Washington Post</em>
+    link_label: 'Arrested by AI: Police Ignore Standards After Facial Recognition
+      Matches.'
+    sources: "<em>The Washington Post</em>"
   footer_link_label: See General Media Coverage
 precedent:
   label: It's Already Working
