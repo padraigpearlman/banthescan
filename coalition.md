@@ -24,6 +24,7 @@ join:
   heading: Join the coalition.
   intro: Represent an organization that wants to help ban biometric surveillance in
     New York? Tell us about your organization below.
+  form_action: "#"
   form_heading: Join the Coalition
   form_intro: We'll follow up by email to confirm your organization and add you to
     our sign-on letters.
@@ -101,7 +102,7 @@ final_cta:
             <h2 class="section-heading">{{ page.join.heading }}</h2>
             <p class="section-intro">{{ page.join.intro }}</p>
 
-            <form class="join-form" action="#" method="post">
+            <form class="join-form" action="{{ page.join.form_action }}" method="post">
                 <h3>{{ page.join.form_heading }}</h3>
                 <p>{{ page.join.form_intro }}</p>
 

@@ -55,6 +55,7 @@ signup_email_placeholder: you@example.com
 signup_button_label: Sign Up
 signup_fineprint: By signing up, you agree to receive emails from Ban the Scan. Unsubscribe
   anytime.
+signup_form_action: "#"
 plugins:
 - jekyll-sitemap
 exclude:

@@ -155,7 +155,7 @@ final_cta:
             <div class="bridge-actions">
                 <a
                     class="btn btn-yellow"
-                    href="mailto:info@banthescan.org"
+                    href="mailto:{{ site.footer_contact_email }}"
                     >{{ page.press.cta_label }}</a
                 >
             </div>

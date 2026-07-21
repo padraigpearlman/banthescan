@@ -114,25 +114,29 @@ real_stories:
     link_url: https://www.nytimes.com/2023/08/06/business/facial-recognition-false-arrest.html
   more_cases:
   - name: Michael Oliver
-    html: <a href="https://www.vice.com/en/article/bv8k8a/faulty-facial-recognition-led-to-his-arrestnow-hes-suing"
-      target="_blank" rel="noopener">Faulty Facial Recognition Led to His Arrest,
-      Now He's Suing.</a> <em>VICE</em>
+    link_url: https://www.vice.com/en/article/bv8k8a/faulty-facial-recognition-led-to-his-arrestnow-hes-suing
+    link_label: Faulty Facial Recognition Led to His Arrest, Now He's Suing.
+    sources: <em>VICE</em>
   - name: Randall Reid
-    html: <a href="https://www.nytimes.com/2023/03/31/technology/facial-recognition-false-arrests.html"
-      target="_blank" rel="noopener">&ldquo;Thousands of Dollars for Something I Didn't
-      Do.&rdquo;</a> <em>The New York Times</em>, Gizmodo, AP News
+    link_url: https://www.nytimes.com/2023/03/31/technology/facial-recognition-false-arrests.html
+    link_label: "&ldquo;Thousands of Dollars for Something I Didn't Do.&rdquo;"
+    sources: <em>The New York Times</em>, Gizmodo, AP News
   - name: Trevis Williams
-    html: <a href="https://www.nytimes.com/2025/08/26/nyregion/nypd-facial-recognition-dismissed-case.html"
-      target="_blank" rel="noopener">How the N.Y.P.D.'s Facial Recognition Tool Landed
-      the Wrong Man in Jail.</a> <em>The New York Times</em>, <a href="https://abc7ny.com/post/man-falsely-jailed-nypds-facial-recognition-surveillance-tech-failed/17664671/"
-      target="_blank" rel="noopener">ABC News</a>
+    link_url: https://www.nytimes.com/2025/08/26/nyregion/nypd-facial-recognition-dismissed-case.html
+    link_label: How the N.Y.P.D.'s Facial Recognition Tool Landed the Wrong Man in
+      Jail.
+    sources: '<em>The New York Times</em>, '
+    link2_url: https://abc7ny.com/post/man-falsely-jailed-nypds-facial-recognition-surveillance-tech-failed/17664671/
+    link2_label: ABC News
   - name: LaDonna Crutchfeld
-    html: Wrongly arrested by Detroit police based on facial recognition. <em>FOX
+    link_url: ''
+    link_label: ''
+    sources: Wrongly arrested by Detroit police based on facial recognition. <em>FOX
       2 Detroit</em>
   - name: Christopher Gatlin
-    html: '<a href="https://www.washingtonpost.com/business/interactive/2025/police-artificial-intelligence-facial-recognition/"
-      target="_blank" rel="noopener">Arrested by AI: Police Ignore Standards After
-      Facial Recognition Matches.</a> <em>The Washington Post</em>'
+    link_url: https://www.washingtonpost.com/business/interactive/2025/police-artificial-intelligence-facial-recognition/
+    link_label: 'Arrested by AI: Police Ignore Standards After Facial Recognition Matches.'
+    sources: <em>The Washington Post</em>
   footer_link_label: See General Media Coverage
 precedent:
   label: It's Already Working
@@ -276,7 +280,7 @@ final_cta:
                 {% for item in page.real_stories.more_cases %}
                 <div class="precedent-card">
                     <span class="flag">{{ item.name }}</span>
-                    <p>{{ item.html }}</p>
+                    <p>{% assign lu = item.link_url | strip %}{% if lu != "" %}<a href="{{ item.link_url }}" target="_blank" rel="noopener">{{ item.link_label }}</a> {% endif %}{{ item.sources }}{% assign lu2 = item.link2_url | strip %}{% if lu2 != "" %}<a href="{{ item.link2_url }}" target="_blank" rel="noopener">{{ item.link2_label }}</a>{% endif %}</p>
                 </div>
                 {% endfor %}
             </div>

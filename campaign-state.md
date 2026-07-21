@@ -21,12 +21,15 @@ petition:
   label: Take Action
   heading: Sign the New York State petition.
   intro: Add your name to tell state legislators to pass all four bills this session.
+  action_network_slug: ban-the-scan-outlaw-facial-recognition-in-new-york
 documents:
   label: Campaign Documents
   heading: Everything your organization needs to help.
   intro: Sign-on letters and memos of support for the state legislative package.
   doc_link_1_label: State Package Sign-On Letter (PDF)
+  doc_link_1_url: "#"
   doc_link_2_label: Memo of Support (PDF)
+  doc_link_2_url: "#"
   callout_text: Represent an organization? Sign on to our statewide coalition letter.
   callout_cta_label: Sign On Your Organization
 contact:
@@ -147,10 +150,10 @@ final_cta:
                     type="text/css"
                 />
                 <script
-                    src="https://actionnetwork.org/widgets/v6/petition/ban-the-scan-outlaw-facial-recognition-in-new-york?format=js&source=widget"
+                    src="https://actionnetwork.org/widgets/v6/petition/{{ page.petition.action_network_slug }}?format=js&source=widget"
                 ></script>
                 <div
-                    id="can-petition-area-ban-the-scan-outlaw-facial-recognition-in-new-york"
+                    id="can-petition-area-{{ page.petition.action_network_slug }}"
                     style="width: 100%"
                 ></div>
             </div>
@@ -165,17 +168,17 @@ final_cta:
             <p class="section-intro">{{ page.documents.intro }}</p>
 
             <div class="doc-links">
-                <a class="btn btn-sm" href="#"
+                <a class="btn btn-sm" href="{{ page.documents.doc_link_1_url }}"
                     >{{ page.documents.doc_link_1_label }}</a
                 >
-                <a class="btn btn-sm" href="#"
+                <a class="btn btn-sm" href="{{ page.documents.doc_link_2_url }}"
                     >{{ page.documents.doc_link_2_label }}</a
                 >
             </div>
 
             <div class="org-callout">
                 <p>{{ page.documents.callout_text }}</p>
-                <a class="btn btn-black" href="mailto:info@banthescan.org"
+                <a class="btn btn-black" href="mailto:{{ site.footer_contact_email }}"
                     >{{ page.documents.callout_cta_label }}</a
                 >
             </div>

@@ -22,17 +22,21 @@ map:
   intro: This crowdsourced map, maintained by S.T.O.P. (Surveillance Technology Oversight
     Project), tracks stores, arenas, and other public accommodations that use facial
     recognition, exactly the kind of use Int 0213-2026 would ban.
+  embed_url: https://datawrapper.dwcdn.net/yf3CS/4/
 petition:
   label: Take Action
   heading: Sign the New York City petition.
   intro: Add your name to tell the City Council to pass all three bills, and to push
     for a sponsor on the government-use ban.
+  action_network_slug: ban-the-scan-nyc
 documents:
   label: Campaign Documents
   heading: Everything your organization needs to help.
   intro: Sign-on letters and memos of support for the City Council package.
   doc_link_1_label: City Council Sign-On Letter (PDF)
+  doc_link_1_url: "#"
   doc_link_2_label: Memo of Support (PDF)
+  doc_link_2_url: "#"
   callout_text: Represent an organization? Sign on to our NYC coalition letter.
   callout_cta_label: Sign On Your Organization
 contact:
@@ -73,10 +77,13 @@ contact:
   speaker_callout_text: The government-use ban still needs a sponsor and a committee
     hearing. Add direct pressure on the City Council Speaker to move it forward.
   speaker_cta_label: Contact the Speaker
+  speaker_cta_url: "#"
   map_callout_text: Help us track where biometric surveillance shows up in NYC stores,
     arenas, and other public accommodations. Add a sighting from your own neighborhood.
   map_cta_label: Contribute to the Biometric Map
+  map_cta_url: https://docs.google.com/forms/d/1izYEzEJfui7Hz02NZV7mjOXBbUCtNqd8Wdi5CNVPNX4/viewform
   map_secondary_label: Read the How-To Guide
+  map_secondary_url: https://www.stopspying.org/biometric-map
 bridge:
   label: Fighting On Two Fronts
   heading: There's a State Campaign too.
@@ -143,7 +150,7 @@ final_cta:
 
             <div class="petition-embed">
                 <iframe
-                    src="https://datawrapper.dwcdn.net/yf3CS/4/"
+                    src="{{ page.map.embed_url }}"
                     width="100%"
                     height="677"
                     frameborder="0"
@@ -190,10 +197,10 @@ final_cta:
                     type="text/css"
                 />
                 <script
-                    src="https://actionnetwork.org/widgets/v6/petition/ban-the-scan-nyc?format=js&source=widget"
+                    src="https://actionnetwork.org/widgets/v6/petition/{{ page.petition.action_network_slug }}?format=js&source=widget"
                 ></script>
                 <div
-                    id="can-petition-area-ban-the-scan-nyc"
+                    id="can-petition-area-{{ page.petition.action_network_slug }}"
                     style="width: 100%"
                 ></div>
             </div>
@@ -208,17 +215,17 @@ final_cta:
             <p class="section-intro">{{ page.documents.intro }}</p>
 
             <div class="doc-links">
-                <a class="btn btn-sm" href="#"
+                <a class="btn btn-sm" href="{{ page.documents.doc_link_1_url }}"
                     >{{ page.documents.doc_link_1_label }}</a
                 >
-                <a class="btn btn-sm" href="#"
+                <a class="btn btn-sm" href="{{ page.documents.doc_link_2_url }}"
                     >{{ page.documents.doc_link_2_label }}</a
                 >
             </div>
 
             <div class="org-callout">
                 <p>{{ page.documents.callout_text }}</p>
-                <a class="btn btn-black" href="mailto:info@banthescan.org"
+                <a class="btn btn-black" href="mailto:{{ site.footer_contact_email }}"
                     >{{ page.documents.callout_cta_label }}</a
                 >
             </div>
@@ -260,7 +267,7 @@ final_cta:
 
             <div class="org-callout">
                 <p>{{ page.contact.speaker_callout_text }}</p>
-                <a class="btn btn-black" href="#"
+                <a class="btn btn-black" href="{{ page.contact.speaker_cta_url }}"
                     >{{ page.contact.speaker_cta_label }}</a
                 >
             </div>
@@ -270,14 +277,14 @@ final_cta:
                 <div class="callout-links">
                     <a
                         class="btn btn-black"
-                        href="https://docs.google.com/forms/d/1izYEzEJfui7Hz02NZV7mjOXBbUCtNqd8Wdi5CNVPNX4/viewform"
+                        href="{{ page.contact.map_cta_url }}"
                         target="_blank"
                         rel="noopener"
                         >{{ page.contact.map_cta_label }}</a
                     >
                     <a
                         class="btn btn-sm"
-                        href="https://www.stopspying.org/biometric-map"
+                        href="{{ page.contact.map_secondary_url }}"
                         target="_blank"
                         rel="noopener"
                         >{{ page.contact.map_secondary_label }}</a
