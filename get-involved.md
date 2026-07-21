@@ -1,6 +1,5 @@
 ---
 title: Get Involved | Ban the Scan
-layout: default
 description: Sign the New York State or New York City petition to ban facial recognition
   and biometric surveillance, or sign your organization on to the coalition.
 hero:
@@ -11,8 +10,8 @@ hero:
 choose:
   label: Where Do You Live?
   heading: Choose your campaign.
-  intro: Both petitions matter. If you live, work, or spend time in New York State
-    and New York City, sign both.
+  intro: 'Both petitions matter: if you or a loved one live or work in NYC or New
+    York State, sign both for maximum impact.'
   state:
     title: New York State
     desc: Four bills would ban the use of facial recognition and biometric surveillance
@@ -35,9 +34,9 @@ organizations:
 final_cta:
   label: Stay Involved
   heading: Signed already? Do one more thing.
-  intro: A direct call or email to your own legislators carries more weight than a
-    petition signature alone.
+  intro: Calling or emailing your legislators is by far the best way to effect change.
   cta_label: Contact Your Legislators
+layout: default
 ---
 
 <main id="main">
